@@ -1,0 +1,38 @@
+digraph {
+    dpi=300
+    rankdir="LR"
+
+    rdr [shape=box, label="Reader"]
+    db [shape=box, label="DB"]
+    spk [shape=box, label="Speaker"]
+
+    rdr_brdg [label="rdr-bridge"]
+    ams_bck [label="AMS\nbackend"]
+
+    subgraph cluster_front {
+        label = "AMS Frontends"
+        frnts [label="Random\nfrontends"]
+        bu_resp [label="bou-responder\n(仮)"]
+    }
+
+    subgraph cluster_web {
+        label = "the Internet"
+        slack [shape=box, label="Slack"]
+        bu_rly [label="bou-relay"]
+        slack -> bu_rly [constraint=false]
+    }
+
+    rdr -> rdr_brdg [constraint=false]
+    rdr_brdg -> ams_bck
+    db -> ams_bck [dir="both"]
+    ams_bck -> spk [constraint=false]
+
+    bu_rly -> bu_resp
+    bu_resp -> slack [style="dashed"]
+
+    ams_bck -> bu_resp
+    ams_bck -> frnts [dir="both"]
+
+    /* スタイルを整えるための偽りの関係 */
+    db -> spk [style=invis]
+}
