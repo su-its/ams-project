@@ -4,7 +4,7 @@
 
 ## プロジェクトの構成
 
-![AMS structure](docs/PJ_map/AMS_MAP.png)
+![AMS structure](docs/AMS_MAP/AMS_MAP.png)
 
 ---
 
@@ -40,6 +40,8 @@
 
 ---
 
-### bou_responder
+## 独自機能
 
-[Slack応対用フロントエンド](https://github.com/su-its/bou-responder)
+### slackからのレスポンスを受け取るリポジトリ
+
+[Slackからのレスポンスを受け取る](https://github.com/su-its/bou-responder)
