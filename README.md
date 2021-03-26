@@ -27,7 +27,7 @@
 
 - TypeScript で記述
 
-[AMS_バックエンド](https://github.com/su-its/ams-backend-nodejs)
+[AMS_バックエンド](https://github.com/su-its/ams-backend)
 
 ---
 
